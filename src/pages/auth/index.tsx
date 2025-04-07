@@ -43,7 +43,7 @@ const AuthPage = () => {
                 fontSize: theme.typography.h5.fontSize,
                 color: theme.palette.text.white,
               }}
-              value="/login"
+              value={PagePath.LOGIN}
             />
             <Tab
               label={t('auth.signUp')}
@@ -51,13 +51,13 @@ const AuthPage = () => {
                 fontSize: theme.typography.h5.fontSize,
                 color: theme.palette.text.white,
               }}
-              value="/register"
+              value={PagePath.REGISTER}
             />
           </TabList>
-          <TabPanel value="/register" sx={{ p: 0 }}>
+          <TabPanel value={PagePath.REGISTER} sx={{ p: 0 }}>
             <RegisterForm />
           </TabPanel>
-          <TabPanel value="/login" sx={{ p: 0 }}>
+          <TabPanel value={PagePath.LOGIN} sx={{ p: 0 }}>
             <LoginForm />
           </TabPanel>
         </TabContext>

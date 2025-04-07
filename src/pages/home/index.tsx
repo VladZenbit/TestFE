@@ -82,7 +82,8 @@ const HomePage = () => {
                   flexDirection: 'column',
                   [theme.breakpoints.down('sm')]: {
                     height: '334px',
-                    maxWidth: '180px',
+                    maxWidth: '100%',
+                    aspectRatio: '4 / 3',
                   },
                 }}
               >

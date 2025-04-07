@@ -34,7 +34,8 @@
     "minCharacters": "Min {{value}} characters",
     "maxCharacters": "Max {{value}} characters",
     "name": "name",
-    "title": "title"
+    "title": "title",
+    "rememberMe": "Remember me"
   },
   "auth": {
     "login": "Log in",

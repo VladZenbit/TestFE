@@ -11,4 +11,5 @@ export const LoginSchema = () =>
     [LoginFields.PASSWORD]: Yup.string().required(
       i18next.t('errors.requiredField'),
     ),
+    [LoginFields.REMEMBER_ME]: Yup.boolean().optional(),
   });

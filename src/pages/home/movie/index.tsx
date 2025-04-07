@@ -15,6 +15,7 @@ import { MovieSchema } from '@src/schemas/movieSchema';
 import { useAppDispatch } from '@src/store';
 import { updateMovie, createMovie } from '@src/store/actions/movie';
 import palette from '@src/themes/palette';
+import LineLoader from '@src/components/LineLoader';
 
 export interface ICreateMovieValues {
   [CreateMovieFields.NAME]: string;
@@ -50,7 +51,7 @@ const MoviePage = () => {
     formState: { isSubmitting, isValid },
   } = methods;
 
-  const { movie } = useMovie(id ? (Array.isArray(id) ? id[0] : id) : null);
+  const { movie, loading } = useMovie(id ? (Array.isArray(id) ? id[0] : id) : null);
 
   useEffect(() => {
     if (movie) {
@@ -124,6 +125,7 @@ const MoviePage = () => {
         {id ? t('main.editMovie') : t('main.createMovie')}
       </Typography>
 
+      {loading && <LineLoader />}
       <Box
         sx={{
           paddingTop: '120px',

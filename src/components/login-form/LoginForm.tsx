@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
 import { useCallback } from 'react';
 
-import { FormProvider, RHFOutlinedInput } from '@src/components';
+import { FormProvider, RHFCheckBox, RHFOutlinedInput } from '@src/components';
 import { RHFOutlinedPasswordInput } from '@src/components/hook-form/RHFOutlinedPasswordInput';
 import { LoginFields, PATH_MAIN } from '@src/constants/index';
 import { useAppDispatch } from '@src/store';
@@ -18,11 +18,13 @@ import { LoginSchema } from './schema';
 export interface ILoginFormValues {
   [LoginFields.EMAIL]: string;
   [LoginFields.PASSWORD]: string;
+  [LoginFields.REMEMBER_ME]?: boolean;
 }
 
 const defaultValues: ILoginFormValues = {
   [LoginFields.EMAIL]: '',
   [LoginFields.PASSWORD]: '',
+  [LoginFields.REMEMBER_ME]: false,
 };
 
 const LoginForm = () => {
@@ -65,6 +67,10 @@ const LoginForm = () => {
           <RHFOutlinedPasswordInput
             name={LoginFields.PASSWORD}
             placeholder={t('inputs.password')}
+          />
+          <RHFCheckBox
+            name={LoginFields.REMEMBER_ME}
+            label={t('inputs.rememberMe')}
           />
         </Stack>
         <Box sx={{ display: 'flex', justifyContent: 'space-between' }}></Box>
